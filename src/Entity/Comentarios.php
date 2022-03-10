@@ -23,6 +23,16 @@ class Comentarios
     private $comentario;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comentarios")
+     */
+    private $user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Posts", inversedBy="comentarios")
+     */
+    private $posts;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $fecha_publicacion;

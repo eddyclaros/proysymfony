@@ -44,6 +44,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=180)
      */
     private $nombre;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Comentarios", mappedBy="user")
+     * 
+     */
+    private $comentarios;
     
 
     public function getId(): ?int
